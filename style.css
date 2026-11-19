@@ -1,0 +1,59 @@
+*   /*Betrifft alle Elemente*/
+{
+    box-sizing: border-box; /*width u. max-width schließt Padding und Rand ein. Dann ist eine Box mit width: 200px auch wirklich 200px breit, egal wie viel Padding sie hat*/
+}
+
+body    /*Die Seite selbst*/
+{
+    background: #f4f4f8;
+    font-family: system-ui, sans-serif; /*system-ui ist die Systemschrift. sans-serif ist das backup, falls systemschrift nicht klappt*/
+    /*max-width: 700px; /*Legt Maximalbreite fest. Alles drunter wird nach Padding usw. skaliert. Allg. geht statt px auch rem. Ist hier etwas robuster, weil es sich dann an eingestelte SChriftgröße anpasst*/
+    margin: 0 auto;  /*Standartabstand, den Browser um Body legt = 0*/
+    padding: 1rem;  /*Eigener Innenabstand = 1rem = 1 Schriftgröße*/
+}
+
+form    /*Jedes Element ist eine Box aus vier Schichten. Von innen nach außen: Inhalt, Padding, Border, Margin. Form gestaltet alle Elemente*/
+{
+    background: white;
+    padding: 1rem;  /*Im Kasten*/
+    margin-bottom: 1rem;    /*Zwischen Kästen*/
+    border: 2px solid #ccc;
+    border-radius: 8px; /*Abgerundete Ecken*/
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);  /*SChatten um die Border. rgba(rot, grün, blau, deckkraft(hier 15%))*/
+}
+
+input   /*Gestaltet Eingabefelder*/
+{
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button  /*Gestaltet Buttons*/
+{
+    padding: 0.5rem 1rem;   /*oben/unten, links/rechts. Bei vier Werten: oben, rechts, unten, links*/
+    font-size: 1rem;
+    background: #3366ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover    /*Wenn man über den Button hovert*/
+{
+    background: #2850cc;    /*Gibt es auf dem Handy nicht. ist dort einfach Zusatz*/
+}
+
+#rechner    /*Betrift <form> id="rechner"... im html und alle seine Kinder (input, button und p)*/
+{
+    display: flex;  /*macht rechner (das form in der html) zu einem flex container*/
+    align-items: center;    /*zentriert Elemente senkrecht zueinander*/
+    gap: 0.5rem;    /*Abstand zwischen allen Elementen*/
+}
+#rechner p  /*Betrifft nur Element p (ist im html als der output definiert*/
+{
+    margin: 0;
+    padding: 0rem 1rem;
+    font-size: 1.2rem;
+}
